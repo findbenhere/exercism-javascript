@@ -126,6 +126,21 @@ describe('Exponentiation of a rational number', () => {
     expect(new Rational(-1, 2).exprational(3)).toEqual(expected);
   });
 
+  xtest('Raise a positive rational number to a negative integer power', () => {
+    const expected = new Rational(25, 9);
+    expect(new Rational(3, 5).exprational(-2)).toEqual(expected);
+  });
+
+  xtest('Raise a negative rational number to an even negative integer power', () => {
+    const expected = new Rational(25, 9);
+    expect(new Rational(-3, 5).exprational(-2)).toEqual(expected);
+  });
+
+  xtest('Raise a negative rational number to an odd negative integer power', () => {
+    const expected = new Rational(-125, 27);
+    expect(new Rational(-3, 5).exprational(-3)).toEqual(expected);
+  });
+
   xtest('Raise zero to an integer power', () => {
     const expected = new Rational(0, 1);
     expect(new Rational(0, 1).exprational(5)).toEqual(expected);
